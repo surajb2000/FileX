@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:filex/widgets/video_thumbnail.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
+// import 'package:flutter_icons/flutter_icons.dart';
 import 'package:mime_type/mime_type.dart';
 import 'package:path/path.dart';
 
@@ -23,13 +23,16 @@ class FileIcon extends StatelessWidget {
     if (_extension == '.apk') {
       return Icon(Icons.android, color: Colors.green);
     } else if (_extension == '.crdownload') {
-      return Icon(Feather.download, color: Colors.lightBlue);
+      // return Icon(Feather.download, color: Colors.lightBlue);
+      return Icon(Icons.download, color: Colors.lightBlue);
     } else if (_extension == '.zip' || _extension.contains('tar')) {
-      return Icon(Feather.archive);
+      // return Icon(Feather.archive);
+      return Icon(Icons.archive);
     } else if (_extension == '.epub' ||
         _extension == '.pdf' ||
         _extension == '.mobi') {
-      return Icon(Feather.file_text, color: Colors.orangeAccent);
+      // return Icon(Feather.file_text, color: Colors.orangeAccent);
+      return Icon(Icons.picture_as_pdf, color: Colors.orangeAccent);
     } else {
       switch (type) {
         case 'image':
@@ -53,11 +56,11 @@ class FileIcon extends StatelessWidget {
             ),
           );
         case 'audio':
-          return Icon(Feather.music, color: Colors.blue);
+          return Icon(Icons.music_note, color: Colors.blue);
         case 'text':
-          return Icon(Feather.file_text, color: Colors.orangeAccent);
+          return Icon(Icons.text_fields, color: Colors.orangeAccent);
         default:
-          return Icon(Feather.file);
+          return Icon(Icons.edit_document);
       }
     }
   }
